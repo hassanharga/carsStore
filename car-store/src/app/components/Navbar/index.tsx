@@ -5,14 +5,15 @@ import Logo from '../Logo';
 import NavItems from './NavItems';
 
 const NavBarContainer = styled.div`
-  min-height: 68px, ${tw`
+  min-height: 68px;
+  ${tw`
     w-full
     max-w-screen-2xl
     flex
     flex-row
     items-center
     justify-between
-    lg:px-20
+    lg:px-28
 `};
 `;
 

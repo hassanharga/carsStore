@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import TopSection from '../../components/TopSection';
 
 const HomeContainer = styled.div`
   ${tw`
@@ -9,12 +10,15 @@ const HomeContainer = styled.div`
     w-full
     h-full
     items-center
-    overflow-x-hidden
 `}
 `;
 
 const Home: React.FC = () => {
-  return <HomeContainer>Home</HomeContainer>;
+  return (
+    <HomeContainer>
+      <TopSection />
+    </HomeContainer>
+  );
 };
 
 export default Home;
