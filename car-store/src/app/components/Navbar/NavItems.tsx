@@ -1,8 +1,9 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import tw from 'twin.macro';
 import { slide as Menu } from 'react-burger-menu';
 import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-router-dom';
+import styled, { css } from 'styled-components';
+import tw from 'twin.macro';
 import { SCREENS } from '../../../constants/screens';
 import menuStyles from './menuStyles';
 
@@ -13,7 +14,7 @@ const ListContainer = styled.ul`
 `};
 `;
 
-const NavItem = styled.li<{ menu?: any }>`
+const NavItem = styled.li<{ menu?: boolean }>`
   ${tw`
     text-sm
     md:text-base
@@ -26,17 +27,17 @@ const NavItem = styled.li<{ menu?: any }>`
     duration-300
     ease-in-out
     hover:text-gray-500
-`};
+  `};
   ${({ menu }) =>
     menu &&
     css`
       ${tw`
-    text-xl
-    text-white
-    font-medium
-    mb-3
-    focus:text-white
-`};
+        text-xl
+        text-white
+        font-medium
+        mb-3
+        focus:text-white
+      `};
     `}
 `;
 
@@ -48,50 +49,36 @@ const NavItems = () => {
         <Menu styles={menuStyles} right>
           <ListContainer>
             <NavItem menu>
-              <a href='#'>Home</a>
+              <Link to='/'>Home</Link>
             </NavItem>
             <NavItem menu>
-              <a href='#'>Cars</a>
+              <Link to='/cars'>Cars</Link>
             </NavItem>
             <NavItem menu>
-              <a href='#'>Services</a>
+              <Link to='/services'>Services</Link>
             </NavItem>
             <NavItem menu>
-              <a href='#'>Contact Us</a>
+              <Link to='/contactus'>Contact Us</Link>
             </NavItem>
           </ListContainer>
         </Menu>
       ) : (
         <ListContainer>
           <NavItem>
-            <a href='#'>Home</a>
+            <Link to='/'>Home</Link>
           </NavItem>
           <NavItem>
-            <a href='#'>Cars</a>
+            <Link to='/cars'>Cars</Link>
           </NavItem>
           <NavItem>
-            <a href='#'>Services</a>
+            <Link to='/services'>Services</Link>
           </NavItem>
           <NavItem>
-            <a href='#'>Contact Us</a>
+            <Link to='/contact'>Contact Us</Link>
           </NavItem>
         </ListContainer>
       )}
     </>
-    // <ListContainer>
-    //   <NavItem>
-    //     <a href='#'>Home</a>
-    //   </NavItem>
-    //   <NavItem>
-    //     <a href='#'>Cars</a>
-    //   </NavItem>
-    //   <NavItem>
-    //     <a href='#'>Services</a>
-    //   </NavItem>
-    //   <NavItem>
-    //     <a href='#'>Contact Us</a>
-    //   </NavItem>
-    // </ListContainer>
   );
 };
 

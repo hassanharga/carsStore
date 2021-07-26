@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import BookCard from '../../components/BookCard';
 import TopSection from '../../components/TopSection';
 
 const HomeContainer = styled.div`
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
   return (
     <HomeContainer>
       <TopSection />
+      <BookCard />
     </HomeContainer>
   );
 };

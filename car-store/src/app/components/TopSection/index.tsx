@@ -4,6 +4,7 @@ import tw from 'twin.macro';
 import PlobImg from '../../../assets/images/blob.svg';
 import MclarenCarImg from '../../../assets/images/mclaren-orange-big.png';
 import { SCREENS } from '../../../constants/screens';
+import Button from '../Button';
 
 const TopSectionContainer = styled.div`
   min-height: 400px;
@@ -97,10 +98,10 @@ const BlobContainer = styled.div`
   }
 
   @media (min-width: ${SCREENS.xl}) {
-    width: 70em;
+    width: 55em;
     max-height: 30em;
-    right: -15em;
-    top: -25em;
+    right: -5em;
+    top: -23em;
     transform: rotate(-20deg);
   }
 `;
@@ -109,7 +110,7 @@ const StandaloneCar = styled.div`
   width: auto;
   height: 10em;
   right: -6em;
-  top: -5em;
+  top: -5.5em;
   position: absolute;
 
   img {
@@ -131,8 +132,8 @@ const StandaloneCar = styled.div`
   }
 
   @media (min-width: ${SCREENS.xl}) {
-    height: 30em;
-    right: -13em;
+    height: 20em;
+    right: 2em;
     top: -9em;
   }
 `;
@@ -140,6 +141,8 @@ const StandaloneCar = styled.div`
 const ButtonsContainer = styled.div`
   ${tw`
     flex
+    md:flex-row
+    flex-col
     flex-wrap
     mt-4
   `};
@@ -155,6 +158,10 @@ const TopSection = () => {
           at the best price for you and get the best quality cars for as long as
           you like
         </Description>
+        <ButtonsContainer>
+          <Button theme='outlined' text='Book Your Ride' />
+          <Button theme='filled' text='Sell Your Car' />
+        </ButtonsContainer>
       </LeftContainer>
       <RightContainer>
         <BlobContainer>
