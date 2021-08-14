@@ -5,6 +5,7 @@ import tw from 'twin.macro';
 type Props = {
   theme: 'filled' | 'outlined';
   text: string;
+  className?: string;
 };
 
 const BaseContainer = styled.button`
@@ -47,13 +48,13 @@ const FilledBtn = styled(BaseContainer)`
   `}
 `;
 
-const Button: React.FC<Props> = ({ text, theme }) => {
+const Button: React.FC<Props> = ({ text, theme, className }) => {
   return (
     <>
       {theme === 'filled' ? (
-        <FilledBtn>{text}</FilledBtn>
+        <FilledBtn className={className}>{text}</FilledBtn>
       ) : (
-        <OutlinedBtn>{text}</OutlinedBtn>
+        <OutlinedBtn className={className}>{text}</OutlinedBtn>
       )}
     </>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   faCalendarAlt,
   faCarSide,
@@ -52,7 +52,7 @@ const StepConatiner = styled.div`
 `;
 
 const Step = styled.div`
-  box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
+  adow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
   ${tw`
     flex
     justify-center
@@ -89,43 +89,38 @@ const StepIcon = styled.span`
 `;
 
 const BookingSteps = () => {
+  const [steps] = useState([
+    {
+      title: 'Choose Location',
+      icon: faMapMarkedAlt,
+      describtion: 'Find The Nearst Yourcar point and book tour car',
+    },
+    {
+      title: 'Pick-Up Date',
+      icon: faCalendarAlt,
+      describtion: 'Pick Up the best date to rent car for you.',
+    },
+    {
+      title: 'Book Your Car',
+      icon: faCarSide,
+      describtion: 'Book your car within one single click',
+    },
+  ]);
   return (
     <Conatianer>
       <Title>Our Working Steps</Title>
       <StepsConatiner>
-        <StepConatiner>
-          <Step>
-            <StepIcon>
-              <FontAwesomeIcon icon={faMapMarkedAlt} />
-            </StepIcon>
-          </Step>
-          <StepTitle>Choose Location</StepTitle>
-          <StepDescription>
-            Find The Nearst Yourcar point and book tour car
-          </StepDescription>
-        </StepConatiner>
-        <StepConatiner>
-          <Step>
-            <StepIcon>
-              <FontAwesomeIcon icon={faCalendarAlt} />
-            </StepIcon>
-          </Step>
-          <StepTitle>Pick-Up Date</StepTitle>
-          <StepDescription>
-            Pick Up the best date to rent car for you.
-          </StepDescription>
-        </StepConatiner>
-        <StepConatiner>
-          <Step>
-            <StepIcon>
-              <FontAwesomeIcon icon={faCarSide} />
-            </StepIcon>
-          </Step>
-          <StepTitle>Book Your Car</StepTitle>
-          <StepDescription>
-            Book your car within one single click
-          </StepDescription>
-        </StepConatiner>
+        {steps.map((step, index) => (
+          <StepConatiner key={index}>
+            <Step>
+              <StepIcon>
+                <FontAwesomeIcon icon={step.icon} />
+              </StepIcon>
+            </Step>
+            <StepTitle>{step.title}</StepTitle>
+            <StepDescription>{step.describtion}</StepDescription>
+          </StepConatiner>
+        ))}
       </StepsConatiner>
     </Conatianer>
   );
