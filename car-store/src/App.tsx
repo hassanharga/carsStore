@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -12,7 +12,6 @@ const AppContainer = styled.div`
     flex
     flex-col
     overflow-x-hidden
-
 `}
 `;
 

@@ -4,6 +4,7 @@ import tw from 'twin.macro';
 import AboutUs from '../../components/AboutUs';
 import BookCard from '../../components/BookCard';
 import BookingSteps from '../../components/BookingSteps';
+import Footer from '../../components/Footer';
 import Marginer from '../../components/Marginer';
 import TopCars from '../../components/TopCars';
 import TopSection from '../../components/TopSection';
@@ -30,6 +31,7 @@ const Home: React.FC = () => {
       <AboutUs />
       <Marginer direction='vertical' margin='8em' />
       <TopCars />
+      <Footer />
     </HomeContainer>
   );
 };
