@@ -1,9 +1,16 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Connection } from 'typeorm';
+import { Connection, getConnectionOptions } from 'typeorm';
+import { __prod__ } from 'src/constants';
 
 @Module({
-  imports: [TypeOrmModule.forRoot()],
+  imports: [
+    TypeOrmModule.forRootAsync({
+      useFactory: async () => {
+        return Object.assign(await getConnectionOptions(__prod__ ? 'prod' : 'dev'));
+      },
+    }),
+  ],
   exports: [TypeOrmModule],
 })
 export class DatabaseModule {

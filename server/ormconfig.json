@@ -1,12 +1,28 @@
-{
-  "type": "postgres",
-  "host": "localhost",
-  "port": 5432,
-  "username": "postgres",
-  "password": "root",
-  "database": "cars",
-  "entities": ["dist/**/*.entity{.ts,.js}"],
-  "synchronize": true,
-  "migrations": ["src/migrations/*{.ts,.js}"],
-  "cli": { "migrationsDir": "src/migrations" }
-}
+[
+  {
+    "name": "dev",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "root",
+    "database": "cars",
+    "entities": ["dist/**/*.entity{.ts,.js}"],
+    "synchronize": true,
+    "migrations": ["src/migrations/*{.ts,.js}"],
+    "cli": { "migrationsDir": "src/migrations" }
+  },
+  {
+    "name": "prod",
+    "type": "postgres",
+    "host": "postgressdb",
+    "port": 5432,
+    "username": "postgres",
+    "password": "root",
+    "database": "cars",
+    "entities": ["dist/**/*.entity{.ts,.js}"],
+    "synchronize": false,
+    "migrations": ["dist/migrations/*{.ts,.js}"],
+    "cli": { "migrationsDir": "src/migrations" }
+  }
+]
