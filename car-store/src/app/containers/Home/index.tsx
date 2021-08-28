@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import AboutUs from '../../components/AboutUs';
-import BookCard from '../../components/BookCard';
-import BookingSteps from '../../components/BookingSteps';
+import AboutUs from '../../components/Home/AboutUs';
+import BookCard from '../../components/Home/BookCard';
+import BookingSteps from '../../components/Home/BookingSteps';
 import Footer from '../../components/Footer';
 import Marginer from '../../components/Marginer';
-import TopCars from '../../components/TopCars';
-import TopSection from '../../components/TopSection';
+import TopCars from '../../components/Home/TopCars';
+import TopSection from '../../components/Home/TopSection';
 
 const HomeContainer = styled.div`
   ${tw`

@@ -9,7 +9,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import styled, { css } from 'styled-components';
 import tw from 'twin.macro';
-import Button from '../Button';
+import Button from './Button';
 import Marginer from '../Marginer';
 import { SCREENS } from '../../../constants/screens';
 

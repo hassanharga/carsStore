@@ -1,0 +1,12 @@
+mutation AddCar($payload: NewCarInput!) {
+  addCar(payload: $payload) {
+    id
+    name
+    dailyPrice
+    monthlyPrice
+    mileAge
+    gas
+    gearType
+    thumbnailUrl
+  }
+}

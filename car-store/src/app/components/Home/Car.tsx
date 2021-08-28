@@ -1,16 +1,16 @@
-import React from 'react';
 import {
   faEllipsisH,
   faFillDrip,
   faTachometerAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { ICar } from '../../../typings/Car';
-import Button from '../Button';
+import { Car as CarProps } from '../../../generated/graphql';
+import Button from './Button';
 
-interface ICarProps extends ICar {}
+interface ICarProps extends CarProps {}
 
 const CarContainer = styled.div`
   width: 16.5em;
@@ -133,7 +133,7 @@ const RentButton = styled(Button)`
 
 const Car: React.FC<ICarProps> = ({
   gas,
-  thumbnailSrc,
+  thumbnailUrl,
   name,
   monthlyPrice,
   gearType,
@@ -143,7 +143,7 @@ const Car: React.FC<ICarProps> = ({
   return (
     <CarContainer>
       <CarThumbnail>
-        <img src={thumbnailSrc} alt='' />
+        <img src={thumbnailUrl} alt='' />
       </CarThumbnail>
       <CarName>{name}</CarName>
       <PricesContainer>

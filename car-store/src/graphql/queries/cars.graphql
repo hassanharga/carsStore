@@ -1,0 +1,12 @@
+query Cars {
+  cars {
+    id
+    name
+    dailyPrice
+    monthlyPrice
+    mileAge
+    gas
+    gearType
+    thumbnailUrl
+  }
+}
