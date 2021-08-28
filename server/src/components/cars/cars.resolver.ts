@@ -8,7 +8,7 @@ export class CarsResolver {
   constructor(private carsService: CarsService) {}
 
   @Query(() => [Car])
-  public async getCars(): Promise<Car[]> {
+  public async cars(): Promise<Car[]> {
     try {
       return await this.carsService.getAllCars();
     } catch (error) {
